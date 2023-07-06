@@ -1,16 +1,18 @@
+const {readFile} = require('fs');
 
 
+console.log('start the code');
 
-const {john, sarah, tom} = require('./names');
-const sayHi = require('./utils');
-
-
-
-
-
-sayHi(john);
-sayHi(sarah);
-sayHi(tom);
+readFile('./directory/subDirectory/text1.txt', 'utf8', (err, res)=> {
+    if(err) return
+    console.log(res);
+});
 
 
+// readFile('./directory/subDirectory/text2.txt', 'utf8', (err, res)=> {
+//     if(err) return
+//     console.log(res);
+// });
 
+
+console.log('finish the deal');
