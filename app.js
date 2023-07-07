@@ -1,18 +1,18 @@
-const {readFile} = require('fs');
+const http = require('http');
 
 
-console.log('start the code');
 
-readFile('./directory/subDirectory/text1.txt', 'utf8', (err, res)=> {
-    if(err) return
-    console.log(res);
+const server = http.createServer((req, res)=> {
+    res.end('hello');
 });
+// server.listen(3000);
+// const eventEmitter = require('events');
+// const myEventEmitter = new eventEmitter();
 
-
-// readFile('./directory/subDirectory/text2.txt', 'utf8', (err, res)=> {
-//     if(err) return
-//     console.log(res);
+// myEventEmitter.on('message', ()=> {
+//     console.log('message received!');
 // });
 
+// myEventEmitter.emit('message');
 
-console.log('finish the deal');
+
