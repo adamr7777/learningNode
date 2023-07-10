@@ -1,18 +1,13 @@
-const http = require('http');
+const {createReadStream} = require('fs');
+const {appendFileSync} = require('fs');
+const path = require('path');
 
 
+for(let i = 1; i < 10; i++) {
+    appendFileSync(path.join(__dirname, 'data.txt'), `\nthis is the variable${i}`);
+};
 
-const server = http.createServer((req, res)=> {
-    res.end('hello');
-});
-// server.listen(3000);
-// const eventEmitter = require('events');
-// const myEventEmitter = new eventEmitter();
+const stream = createReadStream('./data.txt');
 
-// myEventEmitter.on('message', ()=> {
-//     console.log('message received!');
-// });
-
-// myEventEmitter.emit('message');
-
+stream.on('open, ()=>);
 
